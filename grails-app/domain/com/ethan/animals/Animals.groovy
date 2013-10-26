@@ -16,7 +16,7 @@ class Animals {
 	// *** Constraints
 
 	static constraints = {
-		name(nullable:false, blank:false)
+		name(nullable:false, blank:false, unique:true)
 		arrivalDate(nullable:false, blank:false)
 	}
 

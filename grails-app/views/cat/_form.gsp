@@ -1,36 +1,31 @@
 <%@ page import="com.ethan.animals.Cat" %>
-
-
-
-<div class="fieldcontain ${hasErrors(bean: catInstance, field: 'name', 'error')} required">
-	<label for="name">
-		<g:message code="cat.name.label" default="Name" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="name" required="" value="${catInstance?.name}"/>
+<div class="control-group required">
+	<label class="control-label" for="name">Name</label>
+	 <div class="controls">
+		<input type="text" name="name" id="catName" required="" placeholder="Enter Cat Name…" value="${catInstance?.name}">
+	</div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: catInstance, field: 'arrivalDate', 'error')} required">
-	<label for="arrivalDate">
-		<g:message code="cat.arrivalDate.label" default="Arrival Date" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="arrivalDate" precision="day"  value="${catInstance?.arrivalDate}"  />
+<div class="control-group required">
+	<label class="control-label" for="arrivalDate">Arrival Date</label>
+	<div class="controls">
+		<input type="text" class="dateRange" name="arrivalDate"  value="<g:formatDate format='MM/dd/yyyy' date='${catInstance?.arrivalDate}'/>" />
+		<script type="text/javascript">
+         	$('.dateRange').datepicker();
+    	</script>
+	</div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: catInstance, field: 'breed', 'error')} required">
-	<label for="breed">
-		<g:message code="cat.breed.label" default="Breed" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="breed" name="breed.id" from="${com.ethan.common.CatBreed.list()}" optionKey="id" required="" value="${catInstance?.breed?.id}" class="many-to-one"/>
+<div class="control-group required">
+	<label class="control-label" for="breed">Breed</label>
+	<div class="controls">
+		<g:select id="breed" name="breed.id" from="${com.ethan.common.CatBreed.list()}" optionKey="id" required="" value="${catInstance?.breed?.id}" class="many-to-one"/>
+	</div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: catInstance, field: 'coat', 'error')} required">
-	<label for="coat">
-		<g:message code="cat.coat.label" default="Coat" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select name="coat" from="${catInstance.constraints.coat.inList}" required="" value="${catInstance?.coat}" valueMessagePrefix="cat.coat"/>
+<div class="control-group required">
+	<label class="control-label" for="coat">Coat</label>
+	<div class="controls">
+		<g:select name="coat" from="${catInstance.constraints.coat.inList}" required="" value="${catInstance?.coat}" valueMessagePrefix="cat.coat"/>
+	</div>
 </div>
-
