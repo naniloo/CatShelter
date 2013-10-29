@@ -1,39 +1,40 @@
-The Cat Shelter application
+						The Cat Shelter application
 
-In this web application, :
-View a list of cats living in our Shelter. The list is displayed as a simple table. Each row will represent a cat, with its name, breed, coat, date of arrival as well as buttons to edit or delete it.
-Create a new Cat entry when a cat arrives in the Shelter. This form will display as modal popup.
-Edit an existing cat info. This is basically the same form as for creation, but pre-filled with the cat's information.
-Delete an existing cat entry when this cat is adopted and leaves the Shelter. This action is done by clicking on the delete button present on each row on the cats list or from show/edit forms. A confirmation popup will be displayed before deletion.
+In this web application:
+
+	View a list of cats living in our Shelter. The list is displayed as a simple table. Each row will represent a cat, with its name, breed, coat, date of arrival as well as buttons to edit or delete it.
+	Create a new Cat entry when a cat arrives in the Shelter. This form will display as modal popup.
+	Edit an existing cat info. This is basically the same form as for creation, but pre-filled with the cat's information.
+	Delete an existing cat entry when this cat is adopted and leaves the Shelter. This action is done by clicking on the delete button present on each row on the cats list or from show/edit forms. A confirmation popup will be displayed before deletion.
 
 
 A cat have the following properties :
-Name
-Breed (for more info see http://en.wikipedia.org/wiki/List_of_cat_breeds)
-Coat (we will stick to a choice among Hairless, Short, Semi-long, Long)
-Date of arrival (to track since when the cat is in the Shelter)
-
-We MySQL to host your application's data.  
+	
+	Name
+	Breed (for more info see http://en.wikipedia.org/wiki/List_of_cat_breeds)
+	Coat (we will stick to a choice among Hairless, Short, Semi-long, Long)
+	Date of arrival (to track since when the cat is in the Shelter)
 
 Technical Summary
 
-1. Grails Cat domain and CatBreed groovy class
-2. Used angularJS for all CRUDS
-3. GSP templates to render the forms
-4. Ajax calls for submitting the form.
-5. We used single angular controller
+	1. Grails Cat domain and CatBreed groovy class
+	2. Used angularJS for all CRUDS
+	3. GSP templates to render the forms
+	4. Ajax calls for submitting the form.
+	5. We used single angular controller
 
 External configurations to use
 
-grails-app/conf/catShelter-config.groovy
+	grails-app/conf/catShelter-config.groovy
 
-This is an optional configuration file that is used to override settings in the grails-app/conf/*.groovy files. To use this,
+	This is an optional configuration file that is used to override settings in the grails-app/conf/*.groovy files. To use this,
 
-copy this file to a configuration directory  renaming it appropriately (e.g. /catShelter-config.groovy) and then provide a 
+	copy this file to a configuration directory  renaming it appropriately (e.g. /catShelter-config.groovy) and then provide a 
 
-JVM -D argument in the start up of the application as shown:
+	JVM -D argument in the start up of the application as shown:
 
 Run app from command line
-grails -Dtdstm.config.location=grails-app/conf/catShelter-config.groovy run-app
 
-java -Dtdstm.config.location=grails-app/conf/catShelter-config.groovy
+	grails -Dtdstm.config.location=grails-app/conf/catShelter-config.groovy run-app
+
+	java -Dtdstm.config.location=grails-app/conf/catShelter-config.groovy
